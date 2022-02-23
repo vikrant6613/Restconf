@@ -12,4 +12,4 @@ requests.packages.urllib3.disable_warnings()
 
 response_get = requests.get(f"{url}/{module}", headers=device['headers'], auth=(device['username'], device['password']),
                             verify=False).json()
-print(json.dumps(response_get))
+# print(json.dumps(response_get))
