@@ -1,0 +1,37 @@
+module example-ops {
+  namespace "https://example.com/ns/example-ops";
+  prefix "ops";
+
+  organization "Example, Inc.";
+  contact "support at example.com";
+  description "Example Operations Data Model Module";
+  revision "2016-07-07" {
+    description "Initial version.";
+    reference "example.com document 3-3373";
+  }
+
+
+  rpc reboot {
+    input {
+      leaf delay {
+        units seconds;
+        type uint32;
+        default 0;
+      }
+      leaf message { type string; }
+      leaf language { type string; }
+    }
+  }
+
+  rpc get-reboot-info {
+    output {
+      leaf reboot-time {
+        units seconds;
+        type uint32;
+      }
+      leaf message { type string; }
+      leaf language { type string; }
+    }
+  }
+}
+
