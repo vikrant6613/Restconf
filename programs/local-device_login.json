@@ -1,0 +1,10 @@
+{
+    "username" : "admin",
+    "password" : "admin",
+    "host"     : "192.168.0.104",
+    "headers"  : {
+      "Accept": "application/yang-data+json",
+      "Content-Type": "application/yang-data+json"
+      }
+}
+
