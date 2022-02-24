@@ -1,7 +1,7 @@
 import requests
 import json
 
-device = json.loads(open("device_login.json").read())
+device = json.loads(open("local-device_login.json").read())
 url = f"https://{device['host']}/restconf"
 
 requests.packages.urllib3.disable_warnings()
