@@ -18,7 +18,7 @@ def get_interface_list():
 def get_interface_name(interface_list):
     intname = None
     while intname is None:
-        int_name = input("\n Please enter the interface name : ")
+        int_name = input("\nPlease enter the interface name : ")
         for intf_name in interface_list:
             if int_name.lower() == intf_name.lower():
                 intname = intf_name
@@ -49,18 +49,17 @@ def get_interface_details(int_name):
     print(f"MAC Address : {int_state['phys-address']}")
     print(f"Incoming packets : {int_state['statistics']['in-unicast-pkts']}")
     print(f"Outgoing packets : {int_state['statistics']['out-unicast-pkts']}")
-    print("------------------------------------------------------------")
+    print("\n")
 
 
 def main():
     int_list = []
-    print("\nBelow are the interface in the router : \n")
-    for interface in get_interface_list():
-        print(interface['name'])
+    print("\nBelow are the interfaces in the router : \n")
+    for i, interface in enumerate(get_interface_list()):
+        print(f"{i+1}: {interface['name']}")
         int_list.append(interface['name'])
     interface_name = get_interface_name(int_list)
     get_interface_details(interface_name)
-
 
 if __name__ == '__main__':
     sys.exit(main())

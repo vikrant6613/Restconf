@@ -4,11 +4,9 @@ import json
 device = json.loads(open("device_login.json").read())
 module = 'ietf-yang-library:modules-state'
 url = f"https://{device['host']}/restconf/data/{module}"
-
-
 requests.packages.urllib3.disable_warnings()
-response = requests.get(url, headers=device['headers'], verify=False,
-                        auth=(device['username'], device['password'])).json()
+
+response = requests.get(url, headers=device['headers'], verify=False, auth=(device['username'], device['password'])).json()
 
 # saving the Schema name and schema details in a file
 schema_dict = {}

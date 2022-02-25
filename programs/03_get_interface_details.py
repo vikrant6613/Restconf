@@ -1,18 +1,15 @@
 import requests
 import json
 
-device = json.loads(open("local-device_login.json").read())
+device = json.loads(open("device_login.json").read())
 int_conf_module = 'ietf-interfaces:interfaces'
 int_state_module = 'ietf-interfaces:interfaces-state'
 url = f"https://{device['host']}/restconf/data/"
-
 requests.packages.urllib3.disable_warnings()
-interface_config = requests.get(f"{url}{int_conf_module}", headers=device['headers'],
-                                auth=(device['username'], device['password']), verify=False).json()
-interface_state = requests.get(f"{url}{int_state_module}", headers=device['headers'],
-                               auth=(device['username'], device['password']), verify=False).json()
-# print(interface_config)
-# print(interface_state)
+
+interface_config = requests.get(f"{url}{int_conf_module}", headers=device['headers'], auth=(device['username'], device['password']), verify=False).json()
+interface_state = requests.get(f"{url}{int_state_module}", headers=device['headers'], auth=(device['username'], device['password']), verify=False).json()
+
 print("\nBelow are interfaces details :\n")
 for int_config, int_state in zip(interface_config['ietf-interfaces:interfaces']['interface'],
                                  interface_state['ietf-interfaces:interfaces-state']['interface']):
