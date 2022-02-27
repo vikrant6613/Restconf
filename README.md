@@ -104,5 +104,3 @@ We won't go through all the details using the YANG Search website as we did that
 To list the details of a specific interface, use `https://{{host}}:{{port}}/restconf/data/Cisco-IOS-XE-interfaces-oper:interfaces/interface=GigabitEthernet3`.
 
 The Cisco YANG model is a bit different than the IETF YANG model, hence the data returned will also be a bit different.
-
-That's it for this post. Hope you learned a thing or two and see you next time.
