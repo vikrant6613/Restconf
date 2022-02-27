@@ -1,15 +1,4 @@
----
-title: RESTCONF intro with Postman
-categories:
-  - Network Programming
-  - Automation
-tags:
-  - IOS XE
-  - Python
-  - RESTCONF
-  - YANG
-  - Rest API
----
+
 ### What is RESTCONF
 
 As per RFC 8040 (RESTCONF Protocol), the IETF describes RESTCONF as:
